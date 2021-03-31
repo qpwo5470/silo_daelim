@@ -1,6 +1,7 @@
 <?php
-$device = $_POST['device'];
-$uid = $_POST['uid'];
+//$device = $_POST['device'];
+//$uid = $_POST['uid'];
+$uid = '123123';
 $time = time();
 
 $conn = mysqli_connect(
@@ -12,4 +13,6 @@ $sql = "INSERT INTO time(uid, zone1, zone2, zone3, zone4, zone5, zone6) VALUES (
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
 
-return response($result, 200);
+//$myfile = fopen('result.txt', 'w');
+//fwrite($myfile, $result);
+//fclose($myfile);
