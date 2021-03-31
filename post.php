@@ -8,5 +8,5 @@ $conn = mysqli_connect(
     'daelim',
     'daelim',
     'visitors');
-$sql = "INSERT INTO time(uid, zone0) VALUES ('$uid', '$time')";
+$sql = "INSERT INTO time(uid, zone1) VALUES ('$uid', '$time')";
 $result = mysqli_query($conn, $sql);
