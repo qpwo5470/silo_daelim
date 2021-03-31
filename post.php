@@ -7,5 +7,5 @@ $conn = mysqli_connect(
     'daelim',
     'daelim',
     'visitors');
-$sql = "INSERT INTO time(uid, zone'$device') VALUES ('$uid')";
+$sql = "INSERT INTO time(uid, zone0) VALUES ('$uid')";
 $result = mysqli_query($conn, $sql);
