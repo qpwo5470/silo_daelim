@@ -8,6 +8,6 @@ $conn = mysqli_connect(
     'daelim',
     'daelim',
     'visitors');
-$sql = "INSERT INTO time(uid, zone1) VALUES ('$uid', '$time')";
+$sql = "INSERT INTO time(uid, zone1, zone2, zone3, zone4, zone5, zone6) VALUES ('$uid', '$time', 0, 0, 0, 0, 0)";
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
