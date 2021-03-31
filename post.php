@@ -12,6 +12,4 @@ $sql = "INSERT INTO time(uid, zone1, zone2, zone3, zone4, zone5, zone6) VALUES (
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
 
-$myfile = fopen('result.txt', 'w');
-fwrite($myfile, $result);
-fclose($myfile);
+return response($result, 200);
