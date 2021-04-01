@@ -1,5 +1,3 @@
-let response = '';
-
 function loadSQL() {
     let dataObj = {
     };
@@ -17,7 +15,8 @@ function loadSQL() {
         }
     }).done(function () {
     });
-    return response;
 }
+
+let response = '';
 loadSQL();
-document.write(response);
+document.getElementById("p1").innerHTML = response;
