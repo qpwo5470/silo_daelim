@@ -20,7 +20,7 @@ if ($uid == '334504557509722599') {
 }
 mysqli_close($conn);
 
-$prepend = "[{$time}]\tZONE {$device}\tUID {$uid}";
-$file = './log.txt';
+$prepend = "[{$time}]\tZONE {$device}\tUID {$uid}\n";
+$file = 'log.txt';
 $fileContents = file_get_contents($file);
 file_put_contents($file, $prepend . $fileContents);
