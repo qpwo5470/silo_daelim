@@ -3,8 +3,7 @@ function sleep(ms) {
 }
 
 function loadSQL() {
-    let dataObj = {
-    };
+    let dataObj = {};
     $.ajax({
         type: 'POST',
         url: 'monitor.php',
@@ -23,12 +22,16 @@ function loadSQL() {
 
 let response = '';
 
-function write(){
+function write() {
     loadSQL();
     document.getElementById("p1").innerHTML = response;
 }
 
-
-while(true) {
-    sleep(3000).then(() => write())
+async function loop() {
+    while (true) {
+        await sleep(3000);
+        write();
+    }
 }
+
+loop();
