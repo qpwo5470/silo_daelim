@@ -20,7 +20,8 @@ if ($uid == '334504557509722599') {
 }
 mysqli_close($conn);
 
-$datetime = date('Y-m-d H:i:s', localtime($time));
+date_default_timezone_set("Asia/Seoul");
+$datetime = date('Y-m-d H:i:s', $time);
 $prepend = "[{$datetime}]\tZONE {$device}\tUID {$uid}\n";
 $file = 'log.txt';
 $fileContents = file_get_contents($file);
