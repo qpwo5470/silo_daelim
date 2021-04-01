@@ -10,5 +10,4 @@ $conn = mysqli_connect(
 $sql = "SELECT * FROM checklist";
 $data = mysqli_query($conn, $sql);
 mysqli_close($conn);
-print($data);
-?>
+echo $data;
