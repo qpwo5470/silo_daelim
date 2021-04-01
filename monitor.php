@@ -11,7 +11,8 @@ $data = mysqli_query($conn, $sql);
 while ($datum = mysqli_fetch_array($data)) {
     echo (int)$datum['device'];
     echo ',';
-    echo (int)$datum['time'];
+    $connection = (int)time()-(int)$datum['time']<30;
+    echo $connection? "CONNECTED":"DISCONNECTED";
 }
-echo '\n';
+echo '<br>';
 ?>
