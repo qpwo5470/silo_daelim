@@ -8,12 +8,12 @@ function loadSQL() {
         data: dataObj,
         success: function (result) {
             console.log(result);
+            return result
         },
         error: function () {
             console.log('No Response');
+            return 'No Response';
         }
     }).done(function () {
     });
 }
-
-loadSQL();
