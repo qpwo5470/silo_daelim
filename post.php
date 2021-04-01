@@ -20,7 +20,7 @@ if ($uid == '334504557509722599') {
 }
 mysqli_close($conn);
 
-$datetime = date('d-m-Y H:i:s', $time)
+$datetime = date('d-m-Y H:i:s', $time);
 $prepend = "[{$datetime}]\tZONE {$device}\tUID {$uid}\n";
 $file = 'log.txt';
 $fileContents = file_get_contents($file);
