@@ -1,20 +1,21 @@
 function loadSQL() {
-    var dataObj = {
-        category: 0
+    let dataObj = {
     };
+    let response;
     $.ajax({
         type: 'POST',
         url: 'monitor.php',
         data: dataObj,
         success: function (result) {
             console.log(result);
-            return result
+            response = result;
         },
         error: function () {
             console.log('No Response');
-            return 'No Response';
+            response = 'No Response';
         }
     }).done(function () {
     });
+    return response;
 }
 document.write(loadSQL())
