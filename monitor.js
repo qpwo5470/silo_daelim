@@ -1,3 +1,7 @@
+function sleep(ms) {
+    return new Promise((r) => setTimeout(r, ms))
+}
+
 function loadSQL() {
     let dataObj = {
     };
@@ -18,5 +22,13 @@ function loadSQL() {
 }
 
 let response = '';
-loadSQL();
-document.getElementById("p1").innerHTML = response;
+
+function write(){
+    loadSQL();
+    document.getElementById("p1").innerHTML = response;
+}
+
+
+while(true) {
+    sleep(3000).then(() => write())
+}
