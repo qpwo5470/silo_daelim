@@ -1,7 +1,8 @@
+let response = '';
+
 function loadSQL() {
     let dataObj = {
     };
-    let response = '';
     $.ajax({
         type: 'POST',
         url: 'monitor.php',
@@ -18,4 +19,5 @@ function loadSQL() {
     });
     return response;
 }
-document.write(loadSQL())
+loadSQL();
+document.write(response);
