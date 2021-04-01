@@ -1,7 +1,7 @@
 <?php
 $device = $_POST['device'];
 $uid = $_POST['uid'];
-$time = time();
+$time = localtime();
 
 $conn = mysqli_connect(
     'localhost',
@@ -20,7 +20,7 @@ if ($uid == '334504557509722599') {
 }
 mysqli_close($conn);
 
-$datetime = date('d-m-Y H:i:s', $time);
+$datetime = date('Y-m-d H:i:s', $time);
 $prepend = "[{$datetime}]\tZONE {$device}\tUID {$uid}\n";
 $file = 'log.txt';
 $fileContents = file_get_contents($file);
