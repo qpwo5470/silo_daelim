@@ -17,3 +17,4 @@ function loadSQL() {
     }).done(function () {
     });
 }
+document.write(loadSQL())
