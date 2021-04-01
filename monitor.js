@@ -4,7 +4,7 @@ function loadSQL() {
     };
     $.ajax({
         type: 'POST',
-        url: 'phps/loadSQL.php',
+        url: 'monitor.php',
         data: dataObj,
         success: function (result) {
             console.log(result);
