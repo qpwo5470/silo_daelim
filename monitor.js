@@ -1,6 +1,3 @@
-function sleep(ms) {
-    return new Promise((r) => setTimeout(r, ms))
-}
 
 function loadSQL() {
     let dataObj = {};
@@ -27,11 +24,10 @@ function write() {
     document.getElementById("p1").innerHTML = response;
 }
 
-async function loop() {
-    while (true) {
-        await sleep(3000);
-        write();
-    }
+function setup() {
+    createCanvas(10, 10);
 }
 
-loop();
+function draw() {
+    write();
+}
