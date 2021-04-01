@@ -14,6 +14,6 @@ while ($datum = mysqli_fetch_array($data)) {
     echo "    ";
     $connection = (int)time()-(int)$datum['time']<30;
     echo $connection? "CONNECTED":"DISCONNECTED";
+    echo "<br>";
 }
-echo "/";
 ?>
