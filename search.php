@@ -11,9 +11,6 @@ $sql = "SELECT * FROM time where uid='$uid'";
 
 $data = mysqli_query($conn, $sql);
 while ($datum = mysqli_fetch_array($data)) {
-    echo $uid;
-    echo $datum['uid'];
-    echo '/';
     echo $datum['zone1'];
     echo '/';
     echo $datum['zone2'];
@@ -25,6 +22,5 @@ while ($datum = mysqli_fetch_array($data)) {
     echo $datum['zone5'];
     echo '/';
     echo $datum['zone6'];
-    echo "\n";
 }
 ?>
