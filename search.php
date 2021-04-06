@@ -8,7 +8,7 @@ $conn = mysqli_connect(
     'daelim',
     'visitors');
 
-$sql = "SELECT * FROM time WHERE uid='$uid'";
+$sql = "SELECT * FROM time WHERE uid={$uid}";
 
 $data = mysqli_query($conn, $sql);
 while ($datum = mysqli_fetch_array($data)) {
