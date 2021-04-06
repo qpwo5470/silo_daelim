@@ -12,6 +12,7 @@ $sql = "SELECT '$uid' FROM time";
 
 $data = mysqli_query($conn, $sql);
 while ($datum = mysqli_fetch_array($data)) {
+    echo $uid;
     echo $datum['uid'];
     echo '/';
     echo $datum['zone1'];
