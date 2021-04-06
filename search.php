@@ -6,7 +6,7 @@ $conn = mysqli_connect(
     'localhost',
     'daelim',
     'daelim',
-    'check');
+    'visitors');
 
 $sql = "SELECT '$uid' FROM time";
 
