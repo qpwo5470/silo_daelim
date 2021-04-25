@@ -13,9 +13,9 @@ $conn = mysqli_connect(
     'visitors');
 
 
-$randTime = '05:10:00';
-$sql = "UPDATE luckytime SET time = '$randTime' WHERE date = '$date'";
+$sql = "TRUNCATE TABLE luckytime";
 mysqli_query($conn, $sql);
-
 $sql = "TRUNCATE TABLE luckytoday";
+mysqli_query($conn, $sql);
+$sql = "TRUNCATE TABLE time";
 mysqli_query($conn, $sql);
