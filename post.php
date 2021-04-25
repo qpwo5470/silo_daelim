@@ -33,7 +33,7 @@ else {
         $luckyTime = $data['time'];
         if ($time >= strtotime($luckyTime)) {
             $lucky = 1;
-            $sql = "INSERT INTO luckydate(date) VALUES ('$date')";
+            $sql = "INSERT INTO luckytoday(date) VALUES ('$date')";
             mysqli_query($conn, $sql);
         }
     }
