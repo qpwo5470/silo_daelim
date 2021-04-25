@@ -28,8 +28,8 @@ if (count($data) == 0){
 else {
 
     $sql = "SELECT * FROM luckytoday where date='$date'";
-    $data = mysqli_fetch_array(mysqli_query($conn, $sql));
-    if (count($data) == 0) {
+    $data2 = mysqli_fetch_array(mysqli_query($conn, $sql));
+    if (count($data2) == 0) {
         $luckyTime = $data['time'];
         if ($time >= strtotime($luckyTime)) {
             $lucky = 1;
