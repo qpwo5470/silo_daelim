@@ -12,6 +12,11 @@ $conn = mysqli_connect(
     'daelim',
     'visitors');
 
+
+$randTime = '04:30:00';
+$sql = "UPDATE luckytime SET time = '$randTime' WHERE date = '$date'";
+mysqli_query($conn, $sql);
+
 $sql = "SELECT * FROM luckytime where date='$date'";
 $data = mysqli_fetch_array(mysqli_query($conn, $sql));
 if (count($data) == 0){
