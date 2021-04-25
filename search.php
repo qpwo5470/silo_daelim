@@ -22,5 +22,7 @@ while ($datum = mysqli_fetch_array($data)) {
     echo $datum['zone5'];
     echo '/';
     echo $datum['zone6'];
+    echo '/';
+    echo $datum['lucky'];
 }
 ?>
