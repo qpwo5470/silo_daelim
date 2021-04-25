@@ -26,9 +26,16 @@ if (count($data) == 0){
 }
 
 else {
-    $luckyTime = $data['time'];
-    if ($time >= strtotime($luckyTime)) {
-        echo "ok";
+
+    $sql = "SELECT * FROM luckytoday where date='$date'";
+    $data = mysqli_fetch_array(mysqli_query($conn, $sql));
+    if (count($data) == 0) {
+        $luckyTime = $data['time'];
+        if ($time >= strtotime($luckyTime)) {
+            $lucky = 1;
+            $sql = "INSERT INTO luckydate(date) VALUES ('$date')";
+            mysqli_query($conn, $sql);
+        }
     }
 }
 
