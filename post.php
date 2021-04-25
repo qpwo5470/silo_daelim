@@ -25,6 +25,13 @@ if (count($data) == 0){
     mysqli_query($conn, $sql);
 }
 
+else {
+    $luckyTime = $data['time'];
+    if ($time >= strtotime($luckyTime)) {
+        echo "ok";
+    }
+}
+
 if ($uid == '334504557509722599') {
     $sql = "TRUNCATE TABLE time";
     mysqli_query($conn, $sql);
