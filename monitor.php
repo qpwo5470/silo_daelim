@@ -9,7 +9,7 @@ $sql = "SELECT * FROM checklist";
 
 $data = mysqli_query($conn, $sql);
 
-$zones = ["DREAM STATION&#9;", "STUDIO 401&#9;&#9;", "STUDIO 402&#9;&#9;", "STUDIO 403&#9;&#9;", "COMMUNITY CENTER", "DREAM LOUNGE&#9;"];
+$zones = ["DREAM STATION&#9;", "STUDIO 401&#9;", "STUDIO 402&#9;", "STUDIO 403&#9;", "COMMUNITY CENTER", "DREAM LOUNGE&#9;"];
 
 while ($datum = mysqli_fetch_array($data)) {
     echo "<pre>";
