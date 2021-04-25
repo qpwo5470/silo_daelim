@@ -13,7 +13,7 @@ $conn = mysqli_connect(
     'visitors');
 
 
-$randTime = '05:01:00';
+$randTime = '05:04:00';
 $sql = "UPDATE luckytime SET time = '$randTime' WHERE date = '$date'";
 mysqli_query($conn, $sql);
 
