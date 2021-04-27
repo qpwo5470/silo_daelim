@@ -15,22 +15,27 @@ $conn = mysqli_connect(
     'daelim',
     'visitors');
 
-$sql = "SELECT * FROM luckyrange where index=0";
-$range = mysqli_fetch_array(mysqli_query($conn, $sql))[0];
-$startTime = $range['start'].explode(':');
-$endTime = $range['end'].explode(':');
 
 $sql = "SELECT * FROM luckytime where date='$date'";
 $data = mysqli_fetch_array(mysqli_query($conn, $sql));
-if (count($data) == 0){
-    $randDate = new DateTime();
-    $randDate->setTime(mt_rand(10, 16), mt_rand(0, 59), mt_rand(0, 59));
-    $randTime = $randDate->format('H:i:s');
-    $sql = "INSERT INTO luckytime(date, time) VALUES ('$date', '$randTime')";
-    mysqli_query($conn, $sql);
-}
+if (count($data) == 0) {
+    $sql = "SELECT * FROM luckyrange WHERE no = 0";
 
-else {
+    $rangeData = mysqli_query($conn, $sql);
+    while ($range = mysqli_fetch_array($rangeData)) {
+        $startTime = $range['start'];
+        $endTime = $range['end'];
+
+        do {
+            $randDate = new DateTime();
+            $randDate->setTime(mt_rand((int)explode(":", $startTime)[0], (int)explode(":", $endTime)[0]), mt_rand(0, 59), mt_rand(0, 59));
+            $randTime = $randDate->format('H:i:s');
+        } while (strtotime($randTime) < strtotime($startTime) || strtotime($endTime) < strtotime($randTime));
+
+        $sql = "INSERT INTO luckytime(date, time) VALUES ('$date', '$randTime')";
+        mysqli_query($conn, $sql);
+    }
+} else {
 
     $sql = "SELECT * FROM luckytoday where date='$date'";
     $data2 = mysqli_fetch_array(mysqli_query($conn, $sql));
@@ -52,7 +57,7 @@ if ($uid == '334504557509722599') {
     mysqli_query($conn, $sql);
     $sql = "UPDATE time SET zone{$device} = '$time' WHERE uid = '$uid'";
     mysqli_query($conn, $sql);
-    if ($lucky >0){
+    if ($lucky > 0) {
         $sql = "UPDATE time SET lucky = '$lucky' WHERE uid = '$uid'";
         mysqli_query($conn, $sql);
     }
@@ -60,10 +65,9 @@ if ($uid == '334504557509722599') {
 mysqli_close($conn);
 
 $datetime = date('Y-m-d H:i:s', $time);
-if($lucky == 2) {
+if ($lucky == 2) {
     $prepend = "[{$datetime}]\tZONE {$device}\tUID {$uid}\tFORCE LUCKY\n";
-}
-else {
+} else {
     $prepend = "[{$datetime}]\tZONE {$device}\tUID {$uid}\n";
 }
 $file = 'log.txt';
