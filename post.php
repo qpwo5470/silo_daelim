@@ -15,11 +15,16 @@ $conn = mysqli_connect(
     'daelim',
     'visitors');
 
+$sql = "SELECT * FROM luckyrange where index=0";
+$range = mysqli_fetch_array(mysqli_query($conn, $sql))[0];
+$startTime = $range['start'].explode(':');
+$endTime = $range['end'].explode(':');
+
 $sql = "SELECT * FROM luckytime where date='$date'";
 $data = mysqli_fetch_array(mysqli_query($conn, $sql));
 if (count($data) == 0){
     $randDate = new DateTime();
-    $randDate->setTime(mt_rand(10, 16), mt_rand(0, 59), mt_rand(0, 59));
+    $randDate->setTime(mt_rand($startTime[0], $endTime[0]), mt_rand($startTime[0], $endTime[0]), mt_rand($startTime[0], $endTime[0]));
     $randTime = $randDate->format('H:i:s');
     $sql = "INSERT INTO luckytime(date, time) VALUES ('$date', '$randTime')";
     mysqli_query($conn, $sql);
