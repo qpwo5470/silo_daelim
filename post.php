@@ -24,7 +24,7 @@ $sql = "SELECT * FROM luckytime where date='$date'";
 $data = mysqli_fetch_array(mysqli_query($conn, $sql));
 if (count($data) == 0){
     $randDate = new DateTime();
-    $randDate->setTime(mt_rand($startTime[0], $endTime[0]), mt_rand($startTime[0], $endTime[0]), mt_rand($startTime[0], $endTime[0]));
+    $randDate->setTime(mt_rand(10, 16), mt_rand(0, 59), mt_rand(0, 59));
     $randTime = $randDate->format('H:i:s');
     $sql = "INSERT INTO luckytime(date, time) VALUES ('$date', '$randTime')";
     mysqli_query($conn, $sql);
