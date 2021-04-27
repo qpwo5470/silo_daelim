@@ -12,9 +12,15 @@ $conn = mysqli_connect(
     'visitors');
 
 $sql = "SELECT * FROM luckyrange WHERE no = 0";
-$array = mysqli_query($conn, $sql);
-echo mysqli_fetch_array($array)[0];
-echo "<br>";
+
+$data = mysqli_query($conn, $sql);
+while ($datum = mysqli_fetch_array($data)) {
+    echo $datum['start'];
+    echo '/';
+    echo $datum['end'];
+    echo '<br>';
+}
+
 //$range = mysqli_fetch_array($array)[0];
 //echo $range['start'];
 //echo "<br>";
