@@ -1,8 +1,4 @@
 <?php
-$device = $_POST['device'];
-$uid = $_POST['uid'];
-$lucky = (int)$_POST['lucky'];
-
 date_default_timezone_set("Asia/Seoul");
 
 $time = time();
