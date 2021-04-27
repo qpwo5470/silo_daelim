@@ -39,3 +39,5 @@ if($password == "LuckyDream") {
     echo "럭키타임이 [".$setTime."] 으로 설정되었습니다.";
 }
 echo "잘못된 패스워드";
+echo "찐: "."LuckyDream";
+echo $password;
