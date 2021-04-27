@@ -30,7 +30,7 @@ while ($range = mysqli_fetch_array($data)) {
 
     do {
         $randDate = new DateTime();
-        $randDate->setTime(mt_rand((int)explode(":", $startTime)[0], (int)explode(":", $endTime)[0]), mt_rand(0, 59), mt_rand(0, 59);
+        $randDate->setTime(mt_rand((int)explode(":", $startTime)[0], (int)explode(":", $endTime)[0]), mt_rand(0, 59), mt_rand(0, 59));
         $randTime = $randDate->format('H:i:s');
     } while(strtotime($randTime)<strtotime($startTime) || strtotime($endTime)<strtotime($randTime));
 
