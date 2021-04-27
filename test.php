@@ -11,7 +11,7 @@ $conn = mysqli_connect(
     'daelim',
     'visitors');
 
-$sql = "SELECT * FROM luckyrange WHERE index=0";
+$sql = "SELECT * FROM luckyrange WHERE no = 0";
 $range = mysqli_fetch_array(mysqli_query($conn, $sql))[0];
 $startTime = $range['start'] . explode(':');
 $endTime = $range['end'] . explode(':');
