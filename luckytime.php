@@ -33,7 +33,7 @@ if(strcmp($password ,"LuckyDream") == 0) {
     mysqli_close($conn);
 
     $datetime = date('Y-m-d H:i:s', $time);
-    $prepend = "[{$datetime}]\tMANUAL LUCKY TIME SET " . $setTime;
+    $prepend = "[{$datetime}]\tMANUAL LUCKY TIME SET " . $setTime."\n";
     $file = 'log.txt';
     $fileContents = file_get_contents($file);
     file_put_contents($file, $prepend . $fileContents);
