@@ -15,6 +15,11 @@ $sql = "SELECT * FROM luckyrange WHERE no = 0";
 
 $data = mysqli_query($conn, $sql);
 while ($range = mysqli_fetch_array($data)) {
+    echo $range['start'];
+    echo "<br>";
+    echo $range['end'];
+    echo "<br>";
+
     $startTime = $range['start'] . explode(':');
     $endTime = $range['end'] . explode(':');
 
