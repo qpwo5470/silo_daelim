@@ -37,7 +37,9 @@ if($password == "LuckyDream") {
     file_put_contents($file, $prepend . $fileContents);
 
     echo "럭키타임이 [".$setTime."] 으로 설정되었습니다.";
+    echo '<input type="button" value="뒤로가기"onclick="javascripｔ:history.go(-1)">';
 }
 echo "잘못된 패스워드";
 echo "찐: "."LuckyDream";
 echo $password;
+echo '<input type="button" value="뒤로가기"onclick="javascripｔ:history.go(-1)">';
