@@ -26,7 +26,7 @@ if(strcmp($password ,"LuckyDream") == 0) {
         $sql = "INSERT INTO luckytime(date, time) VALUES ('$date', '$setTime')";
         mysqli_query($conn, $sql);
     } else {
-        $sql = "UPDATE luckytime SET time = '$setTime' VALUES WHERE date = '$date'";
+        $sql = "UPDATE luckytime SET time = '$setTime' WHERE date = '$date'";
         mysqli_query($conn, $sql);
     }
 
