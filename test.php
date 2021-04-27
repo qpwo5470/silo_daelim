@@ -21,7 +21,7 @@ while ($range = mysqli_fetch_array($data)) {
     echo "<br>";
 
     $startTime = "".$range['start'];
-    $endTime = "".date('H:i:s', $range['end'];
+    $endTime = "".$range['end'];
 
     echo $startTime;
     echo "<br>";
