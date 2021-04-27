@@ -42,4 +42,5 @@ if(strcmp($password ,"LuckyDream") == 0) {
 echo "잘못된 패스워드";
 echo "찐: "."LuckyDream";
 echo "니가 한 건 ".$password;
+echo $setTime;
 echo '<input type="button" value="뒤로가기"onclick="javascripｔ:history.go(-1)">';
