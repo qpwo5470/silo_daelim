@@ -23,6 +23,11 @@ while ($range = mysqli_fetch_array($data)) {
     $startTime = $range['start'] . explode(':');
     $endTime = $range['end'] . explode(':');
 
+    echo $startTime;
+    echo "<br>";
+    echo $endTime;
+    echo "<br>";
+
     $randDate = new DateTime();
     $randDate->setTime(mt_rand((int)$startTime[0], (int)$endTime[0]), mt_rand((int)$startTime[1], (int)$endTime[1]), mt_rand((int)$startTime[2], (int)$endTime[2]));
     $randTime = $randDate->format('H:i:s');
