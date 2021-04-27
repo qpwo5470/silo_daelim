@@ -5,7 +5,9 @@ $second = $_POST['time_second'];
 $password = $_POST['password'];
 
 if(strcmp($password ,"LuckyDream") == 0) {
-    $setTime = $hour . ":" . $minute . ":" . $second;
+    $setDateTime = new DateTime();
+    $setDateTime->setTime($hour, $minute, $second);
+    $setTime = $setDateTime->format('H:i:s');
 
     date_default_timezone_set("Asia/Seoul");
 
