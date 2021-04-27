@@ -37,3 +37,4 @@ while ($range = mysqli_fetch_array($data)) {
     echo "<br>";
     echo $randTime;
 }
+mysqli_close($conn);
