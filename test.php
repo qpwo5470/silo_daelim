@@ -13,10 +13,10 @@ $conn = mysqli_connect(
 
 $sql = "SELECT * FROM luckyrange WHERE no = 0";
 $range = mysqli_fetch_array(mysqli_query($conn, $sql))[0];
+echo $range['start'];
+echo $range['end'];
 $startTime = $range['start'] . explode(':');
 $endTime = $range['end'] . explode(':');
-echo $startTime;
-echo $endTime;
 
 $randDate = new DateTime();
 $randDate->setTime(mt_rand($startTime[0], $endTime[0]), mt_rand($startTime[1], $endTime[1]), mt_rand($startTime[2], $endTime[2]));
