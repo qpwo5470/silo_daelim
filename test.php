@@ -12,6 +12,8 @@ $conn = mysqli_connect(
     'visitors');
 
 $sql = "SELECT * FROM luckyrange WHERE no = 0";
+echo $sql;
+echo "<br>";
 $range = mysqli_fetch_array(mysqli_query($conn, $sql))[0];
 echo $range['start'];
 echo "<br>";
