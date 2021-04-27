@@ -13,7 +13,7 @@ $conn = mysqli_connect(
 
 $sql = "SELECT * FROM luckyrange WHERE no = 0";
 $array = mysqli_query($conn, $sql);
-echo mysqli_fetch_array($array);
+echo mysqli_fetch_array($array)[0];
 echo "<br>";
 //$range = mysqli_fetch_array($array)[0];
 //echo $range['start'];
