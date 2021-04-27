@@ -20,8 +20,8 @@ while ($range = mysqli_fetch_array($data)) {
     echo $range['end'];
     echo "<br>";
 
-    $startTime = "".$range['start']->explode(':');
-    $endTime = "".$range['end']->explode(':');
+    $startTime = explode(":", $range['start']);
+    $endTime = explode(":", $range['end']);
 
     echo $startTime;
     echo "<br>";
