@@ -36,8 +36,8 @@ if (strcmp($password, "LuckyDream") == 0) {
     file_put_contents($file, $prepend . $fileContents);
 
     echo "럭키타임 범위가 [" . $setStartTime. " - ". $setEndTime . "] 으로 설정되었습니다.";
-    echo '<input type="button" value="뒤로가기"onclick="javascripｔ:history.go(-1)">';
+    echo '<input type="button" value="뒤로가기"onclick="javascript:history.go(-1)">';
 } else {
     echo "잘못된 패스워드";
-    echo '<input type="button" value="뒤로가기"onclick="javascripｔ:history.go(-1)">';
+    echo '<input type="button" value="뒤로가기"onclick="javascript:history.go(-1)">';
 }

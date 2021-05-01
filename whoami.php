@@ -19,3 +19,4 @@ $sql = "TRUNCATE TABLE luckytoday";
 mysqli_query($conn, $sql);
 $sql = "TRUNCATE TABLE time";
 mysqli_query($conn, $sql);
+echo '<script>history.go(-1);</script>';
