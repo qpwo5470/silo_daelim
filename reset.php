@@ -12,16 +12,11 @@ $conn = mysqli_connect(
     'daelim',
     'visitors');
 
-
-$sql = "TRUNCATE TABLE luckytime";
-mysqli_query($conn, $sql);
-$sql = "TRUNCATE TABLE luckytoday";
-mysqli_query($conn, $sql);
 $sql = "TRUNCATE TABLE time";
 mysqli_query($conn, $sql);
 
 $datetime = date('Y-m-d H:i:s', $time);
-$prepend = "[{$datetime}]\tDATA RESETwhoami.php";
+$prepend = "[{$datetime}]\tDATA RESET";
 $file = 'log.txt';
 $fileContents = file_get_contents($file);
 file_put_contents($file, $prepend . $fileContents);
