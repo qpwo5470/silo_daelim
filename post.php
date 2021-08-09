@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['uid']) && !empty($_POST['uid'])) {
+    $clientIP = $_SERVER['REMOTE_ADDR'];
     $device = $_POST['device'];
     $uid = $_POST['uid'];
     $lucky = (int)$_POST['lucky'];
@@ -67,9 +68,9 @@ if (isset($_POST['uid']) && !empty($_POST['uid'])) {
 
     $datetime = date('Y-m-d H:i:s', $time);
     if ($lucky == 2) {
-        $prepend = "[{$datetime}]\tZONE {$device}\tUID {$uid}\tFORCE LUCKY\n";
+        $prepend = "[{$datetime}]\tIP {$clientIP}\tZONE {$device}\tUID {$uid}\tFORCE LUCKY\n";
     } else {
-        $prepend = "[{$datetime}]\tZONE {$device}\tUID {$uid}\n";
+        $prepend = "[{$datetime}]\tIP {$clientIP}\tZONE {$device}\tUID {$uid}\n";
     }
     $file = 'log.txt';
     $fileContents = file_get_contents($file);
