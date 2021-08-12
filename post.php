@@ -70,7 +70,7 @@ if (isset($_POST['uid']) && !empty($_POST['uid'])) {
     if ($lucky == 2) {
         $prepend = "[{$datetime}]\tIP {$clientIP}\tZONE {$device}\tUID {$uid}\tFORCE LUCKY\n";
     } else {
-        $prepend = "[{$datetime}]\tIP {$clientIP}\tZONE {$device}\tUID {$uid}\n";
+        $prepend = "[{$datetime}]\tIP {$clientIP}\tZONE {$device}\tUID {$uid}\tLUCKY {$lucky}\n";
     }
     $file = 'log.txt';
     $fileContents = file_get_contents($file);
